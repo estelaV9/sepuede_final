@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="532.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sepuede_final.OpenController">
+    <children>
+        <ImageView fitHeight="400.0" fitWidth="532.0" pickOnBounds="true">
+            <image>
+                <Image url="@../../../imagen/open.png" />
+            </image>
+        </ImageView>
+        <Button layoutX="150.0" layoutY="190.0" mnemonicParsing="false" onAction="#AccionEntrar" prefHeight="59.0" prefWidth="202.0" style="-fx-background-color: #788053; -fx-background-radius: 20PX; -fx-font-family: GEORGIA;" text="ENTRAR">
+            <font>
+                <Font size="36.0" />
+            </font>
+        </Button>
+        <ImageView fitHeight="78.0" fitWidth="485.0" layoutX="33.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../imagen/7a32d8149f1fda42e9428b3e4ddc2248.png" />
+            </image>
+        </ImageView>
+    </children>
+</Pane>
