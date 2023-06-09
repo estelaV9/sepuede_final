@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="559.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sepuede_final.Pagina2Controller">
+<AnchorPane prefHeight="400.0" prefWidth="559.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sepuede_final.registrarController">
     <children>
         <ImageView fitHeight="400.0" fitWidth="587.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 0.6;">
             <image>
@@ -47,9 +47,9 @@
                         </HBox>
                     </children>
                 </AnchorPane>
-                <AnchorPane prefHeight="226.0" prefWidth="260.0" style="-fx-background-color: #929426;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                <AnchorPane prefHeight="226.0" prefWidth="260.0" style="-fx-background-color: #929426;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                     <children>
-                        <TextField layoutX="110.0" layoutY="20.0" promptText="Nombre de usuario" style="-fx-background-color: #929426;">
+                        <TextField fx:id="txtUusario" layoutX="110.0" layoutY="20.0" promptText="Nombre de usuario" style="-fx-background-color: #929426;">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font>
@@ -64,7 +64,7 @@
                                 <Font size="18.0" />
                             </font>
                         </Label>
-                        <PasswordField layoutX="110.0" layoutY="53.0" promptText="Contraseña" style="-fx-background-color: #929426;">
+                        <PasswordField fx:id="txtContrasenya" layoutX="110.0" layoutY="53.0" promptText="Contraseña" style="-fx-background-color: #929426;">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font></PasswordField>
@@ -75,7 +75,7 @@
                         </Label>
                         <HBox layoutY="175.0" prefHeight="50.0" prefWidth="283.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                             <children>
-                                <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="125.0" style="-fx-background-radius: 20px; -fx-background-color: #776a3c;" text="Sign up">
+                                <Button mnemonicParsing="false" onAction="#AccionAcceder" prefHeight="40.0" prefWidth="125.0" style="-fx-background-radius: 20px; -fx-background-color: #776a3c;" text="Sign up">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
@@ -99,7 +99,7 @@
                         <RadioButton layoutX="115.0" layoutY="90.0" mnemonicParsing="false" text="Comprador" />
                     </children>
                 </AnchorPane>
-                <AnchorPane prefHeight="226.0" prefWidth="260.0" style="-fx-background-color: #929426;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                <AnchorPane prefHeight="226.0" prefWidth="260.0" style="-fx-background-color: #929426;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                     <children>
                         <TextField fx:id="txtContraseya" layoutX="118.0" layoutY="26.0" promptText="Nombre de usuario" style="-fx-background-color: #929426;">
                             <font>
@@ -149,12 +149,12 @@
                         <Button layoutX="168.0" layoutY="119.0" mnemonicParsing="false" style="-fx-background-color: #929426;" text="Registrate" textFill="#9d524d" underline="true" />
                     </children>
                 </AnchorPane>
-                <ImageView fitHeight="50.0" fitWidth="48.0" layoutX="43.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                <ImageView fitHeight="50.0" fitWidth="48.0" layoutX="43.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../imagen/images-removebg-preview.png" />
                     </image>
                 </ImageView>
-                <ImageView fitHeight="50.0" fitWidth="48.0" layoutX="163.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="50.0" fitWidth="48.0" layoutX="163.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" visible="false">
                     <image>
                         <Image url="@../../../imagen/images-removebg-preview.png" />
                     </image>

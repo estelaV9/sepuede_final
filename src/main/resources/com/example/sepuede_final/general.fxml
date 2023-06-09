@@ -9,23 +9,24 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-<AnchorPane prefHeight="345.0" prefWidth="588.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sepuede_final.generalController">
+<AnchorPane prefHeight="345.0" prefWidth="588.0" stylesheets="@../../../../css/css.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sepuede_final.generalController">
     <children>
         <ImageView fitHeight="356.0" fitWidth="600.0" pickOnBounds="true" style="-fx-opacity: 0.6;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <image>
                 <Image url="@../../../imagen/general_fondo.jpg" />
             </image>
         </ImageView>
-        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: #564a4d;" text="Volver" textFill="WHITE" />
-        <Button layoutX="14.0" layoutY="49.0" mnemonicParsing="false" style="-fx-background-color: #564a4d;" text="Cerrar" textFill="WHITE" />
+        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#AccionVolver" style="-fx-background-color: #564a4d;" text="Volver" textFill="WHITE" />
+        <Button layoutX="14.0" layoutY="49.0" mnemonicParsing="false" onAction="#AccionCerrar" style="-fx-background-color: #564a4d;" text="Cerrar" textFill="WHITE" />
         <HBox layoutX="94.0" layoutY="62.0" prefHeight="142.0" prefWidth="481.0">
             <children>
                 <ImageView fitHeight="142.0" fitWidth="186.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../../../imagen/descarga%20(7).jpeg" />
+                        <Image url="@../../../imagen/descarga%20(3).jpeg" />
                     </image>
                 </ImageView>
-                <Separator prefHeight="5.0" prefWidth="88.0" visible="false" />
+            <Button id="img1" fx:id="img1" mnemonicParsing="false" stylesheets="@../../../../css/css.css" text="Button" />
+                <Separator prefHeight="14.0" prefWidth="122.0" visible="false" />
                 <ImageView fitHeight="117.0" fitWidth="201.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../imagen/descarga%20(4).jpeg" />
