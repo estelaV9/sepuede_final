@@ -18,7 +18,7 @@ public class imagen11Controller {
         Node source = (Node) event.getSource();
         Stage escena = (Stage) source.getScene().getWindow();
         escena.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("vistacomprador.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("5vistacomprador.fxml"));
         try {
             Parent root = fxmlLoader.load();
             compradorController controller = fxmlLoader.getController();
@@ -39,7 +39,7 @@ public class imagen11Controller {
         Node source = (Node) event.getSource();
         Stage escena = (Stage) source.getScene().getWindow();
         escena.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("formulario_comprador.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("8formulario_comprador.fxml"));
         try {
             Parent root = fxmlLoader.load();
             formulariocController controller = fxmlLoader.getController();

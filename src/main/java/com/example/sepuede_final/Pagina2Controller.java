@@ -26,7 +26,7 @@ public class Pagina2Controller {
             Node source = (Node) event.getSource();
             Stage escena = (Stage) source.getScene().getWindow();
             escena.close();
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("general.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("4general.fxml"));
             try {
                 Parent root = fxmlLoader.load();
                 generalController controller = fxmlLoader.getController();
@@ -54,7 +54,7 @@ public class Pagina2Controller {
         Node source = (Node) event.getSource();
         Stage escena = (Stage) source.getScene().getWindow();
         escena.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("general.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("4general.fxml"));
         try {
             Parent root = fxmlLoader.load();
             generalController controller = fxmlLoader.getController();
@@ -81,7 +81,7 @@ public class Pagina2Controller {
         Node source = (Node) event.getSource();
         Stage escena2 = (Stage) source.getScene().getWindow();
         escena2.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("registrar.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("2registrar.fxml"));
         try {
             Parent root = fxmlLoader.load();
             registrarController controller = fxmlLoader.getController();
@@ -115,7 +115,7 @@ public class Pagina2Controller {
         Node source = (Node) event.getSource();
         Stage escena1 = (Stage) source.getScene().getWindow();
         escena1.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Pagina2.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("3Pagina2.fxml"));
         try {
             Parent root = fxmlLoader.load();
             Pagina2Controller controller = fxmlLoader.getController();
@@ -137,7 +137,7 @@ public class Pagina2Controller {
         Node source = (Node) event.getSource();
         Stage escena2 = (Stage) source.getScene().getWindow();
         escena2.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("registrar.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("2registrar.fxml"));
         try {
             Parent root = fxmlLoader.load();
             registrarController controller = fxmlLoader.getController();

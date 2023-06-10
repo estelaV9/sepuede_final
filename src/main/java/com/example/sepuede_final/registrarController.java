@@ -45,7 +45,7 @@ public class registrarController {
         Node source = (Node) event.getSource();
         Stage escena1 = (Stage) source.getScene().getWindow();
         escena1.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Pagina2.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("3Pagina2.fxml"));
         try {
             Parent root = fxmlLoader.load();
             Pagina2Controller controller = fxmlLoader.getController();
@@ -89,7 +89,7 @@ public class registrarController {
                 Node source = (Node) event.getSource();
                 Stage escena = (Stage) source.getScene().getWindow();
                 escena.close();
-                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("vistavendedor.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("6vistavendedor.fxml"));
                 try {
                     Parent root = fxmlLoader.load();
                     vendedorController controller = fxmlLoader.getController();
@@ -108,7 +108,7 @@ public class registrarController {
                     Node source = (Node) event.getSource();
                     Stage escena = (Stage) source.getScene().getWindow();
                     escena.close();
-                    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("vistacomprador.fxml"));
+                    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("5vistacomprador.fxml"));
                     try {
                         Parent root = fxmlLoader.load();
                         compradorController controller = fxmlLoader.getController();
@@ -126,7 +126,7 @@ public class registrarController {
                     Node source = (Node) event.getSource();
                     Stage escena = (Stage) source.getScene().getWindow();
                     escena.close();
-                    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("general.fxml"));
+                    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("4general.fxml"));
                     try {
                         Parent root = fxmlLoader.load();
                         generalController controller = fxmlLoader.getController();
@@ -151,7 +151,7 @@ public class registrarController {
         Node source = (Node) event.getSource();
         Stage escena = (Stage) source.getScene().getWindow();
         escena.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("general.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("4general.fxml"));
         try {
             Parent root = fxmlLoader.load();
             generalController controller = fxmlLoader.getController();
@@ -172,7 +172,7 @@ public class registrarController {
         Node source = (Node) event.getSource();
         Stage escena = (Stage) source.getScene().getWindow();
         escena.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("open.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("1open.fxml"));
         try {
             Parent root = fxmlLoader.load();
             OpenController controller = fxmlLoader.getController();

@@ -113,7 +113,7 @@ public class generalController {
         Node source = (Node) event.getSource();
         Stage escena = (Stage) source.getScene().getWindow();
         escena.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Pagina2.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("3Pagina2.fxml"));
         try {
             Parent root = fxmlLoader.load();
             Pagina2Controller controller = fxmlLoader.getController();

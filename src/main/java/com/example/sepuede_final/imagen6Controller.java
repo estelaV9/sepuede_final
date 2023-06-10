@@ -18,7 +18,7 @@ public class imagen6Controller {
         Node source = (Node) event.getSource();
         Stage escena = (Stage) source.getScene().getWindow();
         escena.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("vistavendedor.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("6vistavendedor.fxml"));
         try {
             Parent root = fxmlLoader.load();
             vendedorController controller = fxmlLoader.getController();

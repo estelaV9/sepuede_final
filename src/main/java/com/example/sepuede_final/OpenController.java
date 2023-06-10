@@ -17,7 +17,7 @@ public class OpenController {
         Node source = (Node) event.getSource();
         Stage escena = (Stage) source.getScene().getWindow();
         escena.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("registrar.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("2registrar.fxml"));
         try {
             Parent root = fxmlLoader.load();
             registrarController controller = fxmlLoader.getController();

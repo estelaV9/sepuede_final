@@ -18,7 +18,7 @@ public class imagen4Controller {
         Node source = (Node) event.getSource();
         Stage escena = (Stage) source.getScene().getWindow();
         escena.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("general.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("4general.fxml"));
         try {
             Parent root = fxmlLoader.load();
             generalController controller = fxmlLoader.getController();
