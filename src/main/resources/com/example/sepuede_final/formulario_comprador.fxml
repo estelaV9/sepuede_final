@@ -25,9 +25,9 @@
          <children>
             <HBox layoutY="197.0" prefHeight="53.0" prefWidth="264.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="153.0" style="-fx-background-color: #5e6a70;" text="Comprar" />
+                  <Button mnemonicParsing="false" onAction="#AccionComprar" prefHeight="51.0" prefWidth="153.0" style="-fx-background-color: #5e6a70;" text="Comprar" />
                   <Separator prefHeight="16.0" prefWidth="28.0" visible="false" />
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="141.0" style="-fx-background-color: #9d524d;" text="Cancelar" />
+                  <Button mnemonicParsing="false" onAction="#AccionCancelar" prefHeight="50.0" prefWidth="141.0" style="-fx-background-color: #9d524d;" text="Cancelar" />
                </children>
             </HBox>
             <Text layoutX="45.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comprar obra de arte" underline="true">
@@ -40,13 +40,13 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="94.0" layoutY="41.0" />
+            <TextField fx:id="mail" layoutX="94.0" layoutY="41.0" />
             <Label layoutX="27.0" layoutY="76.0" prefHeight="25.0" prefWidth="37.0" text="País">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="94.0" layoutY="76.0" />
+            <TextField fx:id="pais" layoutX="94.0" layoutY="76.0" />
             <AnchorPane layoutX="27.0" layoutY="101.0">
                <children>
                   <Label layoutY="18.0" prefHeight="26.0" prefWidth="214.0" text="Agrega una tarjeta ">
@@ -60,7 +60,7 @@
             <TextField layoutX="94.0" layoutY="149.0" prefHeight="25.0" prefWidth="59.0" />
             <DatePicker layoutX="162.0" layoutY="149.0" prefHeight="25.0" prefWidth="79.0" />
          </children></Pane>
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: #564a4d;" text="Volver" textFill="WHITE" />
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#AccionVolver" style="-fx-background-color: #564a4d;" text="Volver" textFill="WHITE" />
       <ImageView fitHeight="93.0" fitWidth="377.0" layoutX="112.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../imagen/7a32d8149f1fda42e9428b3e4ddc2248.png" />
