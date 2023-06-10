@@ -123,15 +123,15 @@ public class vendedorController {
         Node source = (Node) event.getSource();
         Stage escena = (Stage) source.getScene().getWindow();
         escena.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("vistavendedor.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("registrar.fxml"));
         try {
             Parent root = fxmlLoader.load();
-            vendedorController controller = fxmlLoader.getController();
+            registrarController controller = fxmlLoader.getController();
             Scene scene = new Scene(root);
             Stage stage = new Stage();
             stage.setResizable(false);
             stage.sizeToScene();
-            stage.setTitle("vistavendedor");
+            stage.setTitle("Registrar");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {

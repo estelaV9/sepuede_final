@@ -15,6 +15,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class registrarController {
+    @FXML
+    private RadioButton comprador;
+    @FXML
+    private RadioButton usuarios;
 
     @FXML
     private RadioButton vendedor;
@@ -62,7 +66,7 @@ public class registrarController {
 
     @FXML
     void AccionSign(ActionEvent event) {
-        if (tipo_rol.getText().equals(vendedor)){
+        if (vendedor.isSelected()){
             Node source = (Node) event.getSource();
             Stage escena = (Stage) source.getScene().getWindow();
             escena.close();
@@ -80,7 +84,46 @@ public class registrarController {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-    }
+    }else {
+            if (comprador.isSelected()) {
+                Node source = (Node) event.getSource();
+                Stage escena = (Stage) source.getScene().getWindow();
+                escena.close();
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("vistacomprador.fxml"));
+                try {
+                    Parent root = fxmlLoader.load();
+                    compradorController controller = fxmlLoader.getController();
+                    Scene scene = new Scene(root);
+                    Stage stage = new Stage();
+                    stage.setResizable(false);
+                    stage.sizeToScene();
+                    stage.setTitle("Pantalla comprador");
+                    stage.setScene(scene);
+                    stage.show();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            } else {
+                    Node source = (Node) event.getSource();
+                    Stage escena = (Stage) source.getScene().getWindow();
+                    escena.close();
+                    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("general.fxml"));
+                    try {
+                        Parent root = fxmlLoader.load();
+                        generalController controller = fxmlLoader.getController();
+                        Scene scene = new Scene(root);
+                        Stage stage = new Stage();
+                        stage.setResizable(false);
+                        stage.sizeToScene();
+                        stage.setTitle("Pantalla general");
+                        stage.setScene(scene);
+                        stage.show();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+
+            }
+        }
     }
 
     @FXML

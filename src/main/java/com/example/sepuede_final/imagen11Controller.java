@@ -18,15 +18,36 @@ public class imagen11Controller {
         Node source = (Node) event.getSource();
         Stage escena = (Stage) source.getScene().getWindow();
         escena.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("general.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("vistacomprador.fxml"));
         try {
             Parent root = fxmlLoader.load();
-            generalController controller = fxmlLoader.getController();
+            compradorController controller = fxmlLoader.getController();
             Scene scene = new Scene(root);
             Stage stage = new Stage();
             stage.setResizable(false);
             stage.sizeToScene();
-            stage.setTitle("General");
+            stage.setTitle("Vista comprador");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    void AccionComprarObra(ActionEvent event) {
+        Node source = (Node) event.getSource();
+        Stage escena = (Stage) source.getScene().getWindow();
+        escena.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("formulario_comprador.fxml"));
+        try {
+            Parent root = fxmlLoader.load();
+            formulariocController controller = fxmlLoader.getController();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setResizable(false);
+            stage.sizeToScene();
+            stage.setTitle("Comprar obra de arte");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {

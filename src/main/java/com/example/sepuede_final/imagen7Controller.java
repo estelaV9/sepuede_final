@@ -18,15 +18,15 @@ public class imagen7Controller {
         Node source = (Node) event.getSource();
         Stage escena = (Stage) source.getScene().getWindow();
         escena.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("general.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("vistavendedor.fxml"));
         try {
             Parent root = fxmlLoader.load();
-            generalController controller = fxmlLoader.getController();
+            vendedorController controller = fxmlLoader.getController();
             Scene scene = new Scene(root);
             Stage stage = new Stage();
             stage.setResizable(false);
             stage.sizeToScene();
-            stage.setTitle("General");
+            stage.setTitle("Vista vendedor");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {

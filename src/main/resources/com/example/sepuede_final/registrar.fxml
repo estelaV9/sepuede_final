@@ -94,9 +94,9 @@
                                 <Insets left="7.0" top="4.0" />
                             </padding>
                         </HBox>
-                        <RadioButton layoutX="115.0" layoutY="137.0" mnemonicParsing="false" text="Usuario" AnchorPane.topAnchor="135.0" />
+                        <RadioButton fx:id="usuario" layoutX="115.0" layoutY="137.0" mnemonicParsing="false" text="Usuario" AnchorPane.topAnchor="135.0" />
                         <RadioButton fx:id="vendedor" layoutX="115.0" layoutY="112.0" mnemonicParsing="false" text="Vendedor" />
-                        <RadioButton layoutX="115.0" layoutY="90.0" mnemonicParsing="false" text="Comprador" />
+                        <RadioButton fx:id="comprador" layoutX="115.0" layoutY="90.0" mnemonicParsing="false" text="Comprador" />
                     </children>
                 </AnchorPane>
                 <AnchorPane prefHeight="226.0" prefWidth="260.0" style="-fx-background-color: #929426;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
