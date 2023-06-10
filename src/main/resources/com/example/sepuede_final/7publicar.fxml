@@ -26,9 +26,9 @@
             <children>
                 <HBox layoutY="160.0" prefHeight="53.0" prefWidth="264.0">
                     <children>
-                        <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="153.0" style="-fx-background-color: #5e6a70;" text="Publicar" />
+                        <Button mnemonicParsing="false" onAction="#AccionPublicar" prefHeight="51.0" prefWidth="153.0" style="-fx-background-color: #5e6a70;" text="Publicar" />
                         <Separator prefHeight="16.0" prefWidth="28.0" visible="false" />
-                        <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="138.0" style="-fx-background-color: #9d524d;" text="Cancelar" />
+                        <Button mnemonicParsing="false" onAction="#AccionCancelar" prefHeight="51.0" prefWidth="138.0" style="-fx-background-color: #9d524d;" text="Cancelar" />
                     </children>
                 </HBox>
                 <Text layoutX="45.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Publicar obra de arte" underline="true">
@@ -51,9 +51,9 @@
                   <Hyperlink layoutX="103.0" layoutY="17.0" text="Este dispositivo" />
                     </children>
                 </AnchorPane>
-            <TextArea layoutX="19.0" layoutY="56.0" prefHeight="53.0" prefWidth="232.0" />
+            <TextArea fx:id="descripcion" layoutX="19.0" layoutY="56.0" prefHeight="53.0" prefWidth="232.0" />
             </children></Pane>
-        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: #564a4d;" text="Volver" textFill="WHITE" />
+        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#AccionVolver" style="-fx-background-color: #564a4d;" text="Volver" textFill="WHITE" />
       <Pagination layoutX="380.0" layoutY="71.0" prefHeight="200.0" prefWidth="200.0" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="394.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
          <image>

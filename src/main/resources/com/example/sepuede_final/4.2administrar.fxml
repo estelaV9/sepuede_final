@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="345.0" prefWidth="532.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sepuede_final.administrarController">
+    <children>
+        <ImageView fitHeight="356.0" fitWidth="600.0" pickOnBounds="true" style="-fx-opacity: 0.6;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <image>
+                <Image url="@../../../imagen/general_fondo.jpg" />
+            </image>
+        </ImageView>
+        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#AccionVolver2" style="-fx-background-color: #564a4d;" text="Volver" textFill="WHITE" />
+        <Button layoutX="14.0" layoutY="49.0" mnemonicParsing="false" onAction="#AccionCerrar" style="-fx-background-color: #564a4d;" text="Cerrar" textFill="WHITE" />
+        <ImageView fitHeight="57.0" fitWidth="369.0" layoutX="111.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../imagen/7a32d8149f1fda42e9428b3e4ddc2248.png" />
+            </image>
+        </ImageView>
+      <TreeTableView layoutX="186.0" layoutY="81.0" prefHeight="222.0" prefWidth="278.0">
+        <columns>
+          <TreeTableColumn prefWidth="75.0" text="C1" />
+          <TreeTableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TreeTableView>
+    </children>
+</AnchorPane>

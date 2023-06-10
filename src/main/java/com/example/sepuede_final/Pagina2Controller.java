@@ -26,15 +26,15 @@ public class Pagina2Controller {
             Node source = (Node) event.getSource();
             Stage escena = (Stage) source.getScene().getWindow();
             escena.close();
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("4general.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("4.1adminsitrador.fxml"));
             try {
                 Parent root = fxmlLoader.load();
-                generalController controller = fxmlLoader.getController();
+                general2Controller controller = fxmlLoader.getController();
                 Scene scene = new Scene(root);
                 Stage stage = new Stage();
                 stage.setResizable(false);
                 stage.sizeToScene();
-                stage.setTitle("Pantalla general");
+                stage.setTitle("Pantalla Administrador");
                 stage.setScene(scene);
                 stage.show();
             } catch (IOException e) {
