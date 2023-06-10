@@ -9,16 +9,16 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="337.0" prefWidth="628.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sepuede_final.imagenController">
+<AnchorPane prefHeight="337.0" prefWidth="628.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sepuede_final.imagen4Controller">
     <children>
         <ImageView fitHeight="355.0" fitWidth="628.0" layoutY="1.0" pickOnBounds="true" style="-fx-opacity: 0.6;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <image>
                 <Image url="@../../../imagen/formulario_fondo.jpeg" />
             </image>
         </ImageView>
-      <Pane layoutX="275.0" layoutY="97.0" prefHeight="162.0" prefWidth="302.0" style="-fx-background-color: #bbb686; -fx-background-radius: 20px;">
+      <Pane layoutX="275.0" layoutY="97.0" prefHeight="154.0" prefWidth="294.0" style="-fx-background-color: #bbb686; -fx-background-radius: 20px;">
          <children>
-            <Text layoutX="10.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shruk, el ser mágicamente desconcertante, es una amalgama verde de esponjas marinas y gelatina alienígena. Sus ojos destellan purpurina cósmica, su risa suena como elefantes voladores tocando maracas de jalea. Cocina sándwiches de sueños con queso lunar y su voz es un coro de animales extraterrestres. ¡Es un caos encantador!" wrappingWidth="282.4000000000001" y="5.0">
+            <Text layoutX="14.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shruk se embarcó en una búsqueda cómica para encontrar el calcetín perdido de su amigo el burro. Siguiendo pistas extravagantes y evitando trampas de slime resbaladizo, Shruk se sumergió en un viaje hilarante que reveló un misterioso mundo subterráneo de calcetines parlantes." wrappingWidth="282.4000000000001" y="5.0">
                <font>
                   <Font size="14.0" />
                </font>
@@ -27,7 +27,7 @@
       </Pane>
       <ImageView fitHeight="199.0" fitWidth="207.0" layoutX="52.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../imagen/img1.jpeg" />
+            <Image url="@../../../imagen/images%20(13).jpeg" />
          </image>
       </ImageView>
         <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#AccionVolver" style="-fx-background-color: #564a4d;" text="Volver" textFill="WHITE" />

@@ -20,39 +20,54 @@
         <Button layoutX="14.0" layoutY="49.0" mnemonicParsing="false" onAction="#AccionCerrar" style="-fx-background-color: #564a4d;" text="Cerrar" textFill="WHITE" />
         <HBox layoutX="94.0" layoutY="62.0" prefHeight="142.0" prefWidth="481.0">
             <children>
-                <ImageView fitHeight="142.0" fitWidth="186.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../../../imagen/descarga%20(3).jpeg" />
-                    </image>
-                </ImageView>
-            <Button id="img1" fx:id="img1" mnemonicParsing="false" stylesheets="@../../../../css/css.css" text="Button" />
+            <Button id="img1" fx:id="img1" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#AccionImg1" prefHeight="28.0" prefWidth="110.0" stylesheets="@../../../../css/css.css" text="Button">
+               <graphic>
+                  <ImageView fitHeight="128.0" fitWidth="139.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../imagen/img1.jpeg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
                 <Separator prefHeight="14.0" prefWidth="122.0" visible="false" />
-                <ImageView fitHeight="117.0" fitWidth="201.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../../../imagen/descarga%20(4).jpeg" />
-                    </image>
-                </ImageView>
+            <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#AccionImg2" text="Button">
+               <graphic>
+                      <ImageView fitHeight="117.0" fitWidth="201.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                              <Image url="@../../../imagen/descarga%20(4).jpeg" />
+                          </image>
+                      </ImageView>
+               </graphic>
+            </Button>
             </children>
         </HBox>
         <HBox layoutX="94.0" layoutY="175.0" prefHeight="157.0" prefWidth="464.0">
             <children>
-                <ImageView fitHeight="111.0" fitWidth="197.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../../../imagen/images%20(9).jpeg" />
-                    </image>
-                    <HBox.margin>
-                        <Insets top="55.0" />
-                    </HBox.margin>
-                </ImageView>
+            <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#AccionImg3" text="Button">
+               <graphic>
+                      <ImageView fitHeight="111.0" fitWidth="197.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                              <Image url="@../../../imagen/images%20(9).jpeg" />
+                          </image>
+                      </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets top="45.0" />
+               </HBox.margin>
+            </Button>
                 <Separator prefWidth="200.0" visible="false" />
-                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../../../imagen/images%20(13).jpeg" />
-                    </image>
-                    <HBox.margin>
-                        <Insets right="35.0" top="13.0" />
-                    </HBox.margin>
-                </ImageView>
+            <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#AccionImg4" text="Button">
+               <graphic>
+                      <ImageView fitHeight="132.0" fitWidth="136.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                              <Image url="@../../../imagen/images%20(13).jpeg" />
+                          </image>
+                      </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets top="24.0" />
+               </HBox.margin>
+            </Button>
             </children>
         </HBox>
         <ScrollBar layoutX="579.0" layoutY="5.0" orientation="VERTICAL" prefHeight="345.0" prefWidth="14.0" />

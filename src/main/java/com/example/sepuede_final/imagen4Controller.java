@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class imagenController {
+public class imagen4Controller {
 
 
     @FXML
