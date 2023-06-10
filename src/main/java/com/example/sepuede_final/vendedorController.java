@@ -14,7 +14,100 @@ import java.io.IOException;
 public class vendedorController {
 
     @FXML
-    private Button img1;
+    private Button img5;
+
+    @FXML
+    private Button img6;
+
+
+    @FXML
+    void AccionImg5(ActionEvent event) {
+        Node source = (Node) event.getSource();
+        Stage escena = (Stage) source.getScene().getWindow();
+        escena.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("imagen5.fxml"));
+        try {
+            Parent root = fxmlLoader.load();
+            imagen5Controller controller = fxmlLoader.getController();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setResizable(false);
+            stage.sizeToScene();
+            stage.setTitle("Imagen5");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    void AccionImg6(ActionEvent event) {
+        Node source = (Node) event.getSource();
+        Stage escena = (Stage) source.getScene().getWindow();
+        escena.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("imagen6.fxml"));
+        try {
+            Parent root = fxmlLoader.load();
+            imagen6Controller controller = fxmlLoader.getController();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setResizable(false);
+            stage.sizeToScene();
+            stage.setTitle("Imagen6");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    void AccionImg7(ActionEvent event) {
+        Node source = (Node) event.getSource();
+        Stage escena = (Stage) source.getScene().getWindow();
+        escena.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("imagen7.fxml"));
+        try {
+            Parent root = fxmlLoader.load();
+            imagen7Controller controller = fxmlLoader.getController();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setResizable(false);
+            stage.sizeToScene();
+            stage.setTitle("Imagen7");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    void AccionImg8(ActionEvent event) {
+        Node source = (Node) event.getSource();
+        Stage escena = (Stage) source.getScene().getWindow();
+        escena.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("imagen8.fxml"));
+        try {
+            Parent root = fxmlLoader.load();
+            imagen8Controller controller = fxmlLoader.getController();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setResizable(false);
+            stage.sizeToScene();
+            stage.setTitle("Imagen8");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+
+
+
 
     @FXML
     void AccionCerrar(ActionEvent event) {
@@ -23,105 +116,43 @@ public class vendedorController {
         escena.close();
     }
 
-    @FXML
-    void AccionImg1(ActionEvent event) {
-        Node source = (Node) event.getSource();
-        Stage escena = (Stage) source.getScene().getWindow();
-        escena.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("imagen.fxml"));
-        try {
-            Parent root = fxmlLoader.load();
-            imagenController controller = fxmlLoader.getController();
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-            stage.setResizable(false);
-            stage.sizeToScene();
-            stage.setTitle("Imagen");
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
-
-    @FXML
-    void AccionImg2(ActionEvent event) {
-        Node source = (Node) event.getSource();
-        Stage escena = (Stage) source.getScene().getWindow();
-        escena.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("imagen2.fxml"));
-        try {
-            Parent root = fxmlLoader.load();
-            imagen2Controller controller = fxmlLoader.getController();
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-            stage.setResizable(false);
-            stage.sizeToScene();
-            stage.setTitle("Imagen2");
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    @FXML
-    void AccionImg3(ActionEvent event) {
-        Node source = (Node) event.getSource();
-        Stage escena = (Stage) source.getScene().getWindow();
-        escena.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("imagen3.fxml"));
-        try {
-            Parent root = fxmlLoader.load();
-            imagen3Controller controller = fxmlLoader.getController();
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-            stage.setResizable(false);
-            stage.sizeToScene();
-            stage.setTitle("Imagen3");
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    @FXML
-    void AccionImg4(ActionEvent event) {
-        Node source = (Node) event.getSource();
-        Stage escena = (Stage) source.getScene().getWindow();
-        escena.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("imagen4.fxml"));
-        try {
-            Parent root = fxmlLoader.load();
-            imagen4Controller controller = fxmlLoader.getController();
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-            stage.setResizable(false);
-            stage.sizeToScene();
-            stage.setTitle("Imagen4");
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
     @FXML
     void AccionVolver(ActionEvent event) {
         Node source = (Node) event.getSource();
         Stage escena = (Stage) source.getScene().getWindow();
         escena.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Pagina2.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("vistavendedor.fxml"));
         try {
             Parent root = fxmlLoader.load();
-            Pagina2Controller controller = fxmlLoader.getController();
+            vendedorController controller = fxmlLoader.getController();
             Scene scene = new Scene(root);
             Stage stage = new Stage();
             stage.setResizable(false);
             stage.sizeToScene();
-            stage.setTitle("Pagina2");
+            stage.setTitle("vistavendedor");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    void AccionPublicar(ActionEvent event) {
+        Node source = (Node) event.getSource();
+        Stage escena = (Stage) source.getScene().getWindow();
+        escena.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("publicar.fxml"));
+        try {
+            Parent root = fxmlLoader.load();
+            publicarController controller = fxmlLoader.getController();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setResizable(false);
+            stage.sizeToScene();
+            stage.setTitle("Publicar");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -16,22 +15,21 @@
                 <Image url="@../../../imagen/formulario_fondo.jpeg" />
             </image>
         </ImageView>
-      <Pane layoutX="275.0" layoutY="97.0" prefHeight="154.0" prefWidth="294.0" style="-fx-background-color: #bbb686; -fx-background-radius: 20px;">
+      <Pane layoutX="277.0" layoutY="96.0" prefHeight="163.0" prefWidth="309.0" style="-fx-background-color: #bbb686; -fx-background-radius: 20px;">
          <children>
-            <Text layoutX="14.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shruk se embarcó en una búsqueda cómica para encontrar el calcetín perdido de su amigo el burro. Siguiendo pistas extravagantes y evitando trampas de slime resbaladizo, Shruk se sumergió en un viaje hilarante que reveló un misterioso mundo subterráneo de calcetines parlantes." wrappingWidth="282.4000000000001" y="5.0">
+            <Text layoutX="13.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shruk descubrió un misterioso libro mágico que le permitía crear objetos de la nada. Con cada palabra que pronunciaba, aparecían cupcakes voladores, sombreros parlantes y lámparas que cantaban ópera. Sin embargo, pronto se dio cuenta de que el poder del libro estaba fuera de control, creando un caos dulce y musical por doquier." wrappingWidth="282.4000000000001" y="5.0">
                <font>
                   <Font size="14.0" />
                </font>
             </Text>
          </children>
       </Pane>
-      <ImageView fitHeight="199.0" fitWidth="207.0" layoutX="52.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="199.0" fitWidth="207.0" layoutX="55.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../imagen/images%20(13).jpeg" />
+            <Image url="@../../../imagen/descarga%20(9).jpeg" />
          </image>
       </ImageView>
         <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#AccionVolver" style="-fx-background-color: #564a4d;" text="Volver" textFill="WHITE" />
-        <ScrollBar layoutX="607.0" layoutY="8.0" orientation="VERTICAL" prefHeight="340.0" prefWidth="14.0" />
       <ImageView fitHeight="46.0" fitWidth="377.0" layoutX="132.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../imagen/7a32d8149f1fda42e9428b3e4ddc2248.png" />

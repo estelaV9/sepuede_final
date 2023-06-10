@@ -66,10 +66,10 @@ public class registrarController {
             Node source = (Node) event.getSource();
             Stage escena = (Stage) source.getScene().getWindow();
             escena.close();
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("publicar_vista.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("vistavendedor.fxml"));
             try {
                 Parent root = fxmlLoader.load();
-                VistapController controller = fxmlLoader.getController();
+                vendedorController controller = fxmlLoader.getController();
                 Scene scene = new Scene(root);
                 Stage stage = new Stage();
                 stage.setResizable(false);
