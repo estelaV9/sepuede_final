@@ -26,7 +26,7 @@ public class registrarController {
     }
 
     @FXML
-    void AccionCerrar2(ActionEvent event) {
+    void AccionCerrar2 (ActionEvent event) {
         Node source = (Node) event.getSource();
         Stage escena = (Stage) source.getScene().getWindow();
         escena.close();
