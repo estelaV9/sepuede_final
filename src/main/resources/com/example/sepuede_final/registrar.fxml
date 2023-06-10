@@ -75,7 +75,7 @@
                         </Label>
                         <HBox layoutY="175.0" prefHeight="50.0" prefWidth="283.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                             <children>
-                                <Button mnemonicParsing="false" onAction="#AccionAcceder" prefHeight="40.0" prefWidth="125.0" style="-fx-background-radius: 20px; -fx-background-color: #776a3c;" text="Sign up">
+                                <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="125.0" style="-fx-background-radius: 20px; -fx-background-color: #776a3c;" text="Sign up">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
@@ -122,13 +122,13 @@
                             </font></PasswordField>
                         <HBox prefHeight="50.0" prefWidth="115.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                             <children>
-                                <Button mnemonicParsing="false" onAction="#AccionAcceder" prefHeight="40.0" prefWidth="126.0" style="-fx-background-radius: 20px; -fx-background-color: #776a3c;" text="Log in">
+                                <Button mnemonicParsing="false"  prefHeight="40.0" prefWidth="126.0" style="-fx-background-radius: 20px; -fx-background-color: #776a3c;" text="Log in">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
                                 </Button>
                                 <Separator prefHeight="3.0" prefWidth="25.0" visible="false" />
-                                <Button mnemonicParsing="false" onAction="#AccinoCancelar" prefHeight="40.0" prefWidth="132.0" style="-fx-background-radius: 20px; -fx-background-color: #9d524d;" text="Cancel ">
+                                <Button mnemonicParsing="false"  prefHeight="40.0" prefWidth="132.0" style="-fx-background-radius: 20px; -fx-background-color: #9d524d;" text="Cancel ">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
@@ -161,9 +161,9 @@
                 </ImageView>
             </children>
         </AnchorPane>
-        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#AccionVolver" style="-fx-background-color: #564a4d;" text="Volver" textFill="WHITE" />
-        <Button layoutX="428.0" layoutY="360.0" mnemonicParsing="false" onAction="#AccionAcceder" style="-fx-background-color: #564a4d;" text="Acceder sin cuenta" textFill="WHITE" />
-        <Button layoutX="14.0" layoutY="49.0" mnemonicParsing="false" onAction="#AccionCerrar" style="-fx-background-color: #564a4d;" text="Cerrar" textFill="WHITE" />
+        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false"  style="-fx-background-color: #564a4d;" text="Volver" textFill="WHITE" />
+        <Button layoutX="428.0" layoutY="360.0" mnemonicParsing="false"  style="-fx-background-color: #564a4d;" text="Acceder sin cuenta" textFill="WHITE" />
+        <Button layoutX="14.0" layoutY="49.0" mnemonicParsing="false"  style="-fx-background-color: #564a4d;" text="Cerrar" textFill="WHITE" />
         <ImageView fitHeight="81.0" fitWidth="358.0" layoutX="101.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../../../imagen/7a32d8149f1fda42e9428b3e4ddc2248.png" />
