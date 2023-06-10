@@ -6,10 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -66,44 +63,66 @@ public class registrarController {
 
     @FXML
     void AccionSign(ActionEvent event) {
-        if (vendedor.isSelected()){
-            Node source = (Node) event.getSource();
-            Stage escena = (Stage) source.getScene().getWindow();
-            escena.close();
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("vistavendedor.fxml"));
-            try {
-                Parent root = fxmlLoader.load();
-                vendedorController controller = fxmlLoader.getController();
-                Scene scene = new Scene(root);
-                Stage stage = new Stage();
-                stage.setResizable(false);
-                stage.sizeToScene();
-                stage.setTitle("Pantalla vendedor");
-                stage.setScene(scene);
-                stage.show();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-    }else {
-            if (comprador.isSelected()) {
+        if(txtUusario.getText().equals("") || txtContrasenya.getText().equals("") || tipo_rol.getText().equals("")){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Los campos estan vacios");
+            alert.showAndWait();
+        }else {
+            if(comprador.isSelected() && vendedor.isSelected()){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText("no puedes elegir dos opciones");
+                alert.showAndWait();
+
+            }else {
+                if(comprador.isSelected() && usuarios.isSelected()){
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setContentText("no puedes elegir dos opciones");
+                    alert.showAndWait();
+                }else {
+                    if(comprador.isSelected() && vendedor.isSelected() && usuarios.isSelected()){
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
+                        alert.setContentText("no puedes elegir dos o mas de dos opciones");
+                        alert.showAndWait();
+                    }}}}
+
+            if (vendedor.isSelected()) {
                 Node source = (Node) event.getSource();
                 Stage escena = (Stage) source.getScene().getWindow();
                 escena.close();
-                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("vistacomprador.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("vistavendedor.fxml"));
                 try {
                     Parent root = fxmlLoader.load();
-                    compradorController controller = fxmlLoader.getController();
+                    vendedorController controller = fxmlLoader.getController();
                     Scene scene = new Scene(root);
                     Stage stage = new Stage();
                     stage.setResizable(false);
                     stage.sizeToScene();
-                    stage.setTitle("Pantalla comprador");
+                    stage.setTitle("Pantalla vendedor");
                     stage.setScene(scene);
                     stage.show();
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
             } else {
+                if (comprador.isSelected()) {
+                    Node source = (Node) event.getSource();
+                    Stage escena = (Stage) source.getScene().getWindow();
+                    escena.close();
+                    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("vistacomprador.fxml"));
+                    try {
+                        Parent root = fxmlLoader.load();
+                        compradorController controller = fxmlLoader.getController();
+                        Scene scene = new Scene(root);
+                        Stage stage = new Stage();
+                        stage.setResizable(false);
+                        stage.sizeToScene();
+                        stage.setTitle("Pantalla comprador");
+                        stage.setScene(scene);
+                        stage.show();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                } else {
                     Node source = (Node) event.getSource();
                     Stage escena = (Stage) source.getScene().getWindow();
                     escena.close();
@@ -122,9 +141,10 @@ public class registrarController {
                         throw new RuntimeException(e);
                     }
 
+                }
             }
         }
-    }
+
 
     @FXML
     void AccionSincuenta2(ActionEvent event) {
