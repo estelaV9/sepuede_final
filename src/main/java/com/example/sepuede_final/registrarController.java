@@ -6,13 +6,20 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class registrarController {
+
+    @FXML
+    private RadioButton vendedor;
+    @FXML
+    private Label tipo_rol;
 
     @FXML
     private PasswordField txtContrasenya;
@@ -55,23 +62,25 @@ public class registrarController {
 
     @FXML
     void AccionSign(ActionEvent event) {
-        Node source = (Node) event.getSource();
-        Stage escena1 = (Stage) source.getScene().getWindow();
-        escena1.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("general.fxml"));
-        try {
-            Parent root = fxmlLoader.load();
-            generalController controller = fxmlLoader.getController();
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-            stage.setResizable(false);
-            stage.sizeToScene();
-            stage.setTitle("Pagina General");
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        if (tipo_rol.getText().equals(vendedor)){
+            Node source = (Node) event.getSource();
+            Stage escena = (Stage) source.getScene().getWindow();
+            escena.close();
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("publicar_vista.fxml"));
+            try {
+                Parent root = fxmlLoader.load();
+                VistapController controller = fxmlLoader.getController();
+                Scene scene = new Scene(root);
+                Stage stage = new Stage();
+                stage.setResizable(false);
+                stage.sizeToScene();
+                stage.setTitle("Pantalla vendedor");
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+    }
     }
 
     @FXML
