@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 public class formulariocController {
 
@@ -28,13 +29,15 @@ public class formulariocController {
     void AccionCancelar(ActionEvent event) {
         mail.setText("");
         tarjeta.setText("");
+        calendario.setValue(null);
     }
 
 
     @FXML
 
     void AccionComprar(ActionEvent event) {
-        if (mail.getText().equals("") || tarjeta.getText().equals("")) {
+        LocalDate holi = calendario.getValue();
+        if (mail.getText().equals("") || tarjeta.getText().equals("") || holi == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText("Los campos estan vacios");
             alert.showAndWait();

@@ -68,22 +68,6 @@ public class registrarController {
             alert.setContentText("Los campos estan vacios");
             alert.showAndWait();
         }else {
-            if(comprador.isSelected() && vendedor.isSelected()){
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setContentText("no puedes elegir dos opciones");
-                alert.showAndWait();
-
-            }else {
-                if(comprador.isSelected() && usuarios.isSelected()){
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setContentText("no puedes elegir dos opciones");
-                    alert.showAndWait();
-                }else {
-                    if(comprador.isSelected() && vendedor.isSelected() && usuarios.isSelected()){
-                        Alert alert = new Alert(Alert.AlertType.ERROR);
-                        alert.setContentText("no puedes elegir dos o mas de dos opciones");
-                        alert.showAndWait();
-                    }}}}
 
             if (vendedor.isSelected()) {
                 Node source = (Node) event.getSource();
@@ -143,7 +127,7 @@ public class registrarController {
 
                 }
             }
-        }
+        }}
 
 
     @FXML
