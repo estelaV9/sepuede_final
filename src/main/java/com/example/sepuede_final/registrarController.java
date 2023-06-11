@@ -52,8 +52,8 @@ public class registrarController {
             stage.setScene(new Scene(root));
             stage.show();
 
-            PauseTransition delay = new PauseTransition(Duration.seconds(5)); // 5 segundos de pausa
-            delay.setOnFinished(e -> stage.close()); // Cierra la ventana después de 5 segundos
+            PauseTransition delay = new PauseTransition(Duration.seconds(3)); // 3 segundos de pausa
+            delay.setOnFinished(e -> stage.close()); // Cierra la ventana después de 3 segundos
             delay.play();
         } catch (IOException e) {
             throw new RuntimeException(e);

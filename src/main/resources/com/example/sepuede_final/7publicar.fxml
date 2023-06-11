@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
@@ -11,10 +12,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="313.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sepuede_final.publicarController">
+<Pane fx:id="ancho" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="313.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sepuede_final.publicarController">
     <children>
 
         <ImageView fitHeight="315.0" fitWidth="610.0" pickOnBounds="true" style="-fx-opacity: 0.6;">
@@ -54,16 +56,23 @@
             <TextArea fx:id="descripcion" layoutX="19.0" layoutY="56.0" prefHeight="53.0" prefWidth="232.0" />
             </children></Pane>
         <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#AccionVolver" style="-fx-background-color: #564a4d;" text="Volver" textFill="WHITE" />
-      <Pagination layoutX="380.0" layoutY="71.0" prefHeight="200.0" prefWidth="200.0" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="394.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../imagen/images%20(11).jpeg" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="97.0" fitWidth="377.0" layoutX="140.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../imagen/7a32d8149f1fda42e9428b3e4ddc2248.png" />
          </image>
       </ImageView>
+      <VBox layoutX="372.0" layoutY="71.0" prefHeight="200.0" prefWidth="222.0">
+         <children>
+            <Pagination fx:id="on" maxPageIndicatorCount="5" pageCount="10" prefHeight="200.0" prefWidth="200.0" />
+            <Button fx:id="bottonImaen" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#AccionSeleccionar1" text="seleccione una imagen">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets left="45.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
     </children>
 </Pane>
