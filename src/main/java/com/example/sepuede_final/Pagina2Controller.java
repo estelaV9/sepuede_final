@@ -1,5 +1,6 @@
 package com.example.sepuede_final;
 
+import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +11,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 
@@ -103,6 +105,23 @@ public class Pagina2Controller {
         Node source = (Node) event.getSource();
         Stage escena = (Stage) source.getScene().getWindow();
         escena.close();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("cerrar.fxml"));
+        try {
+            Parent root = fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setResizable(false);
+            stage.sizeToScene();
+            stage.setTitle("Cerrar");
+            stage.setScene(new Scene(root));
+            stage.show();
+
+            PauseTransition delay = new PauseTransition(Duration.seconds(5)); // 5 segundos de pausa
+            delay.setOnFinished(e -> stage.close()); // Cierra la ventana después de 5 segundos
+            delay.play();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML
