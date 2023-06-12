@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.ByteArrayInputStream;
@@ -28,13 +29,9 @@ public class imagenController {
     @FXML
     private Label totalImagenes;
     @FXML
-    private TextField txtDescripcion;
+    private Text txtDescripcion;
     @FXML
     private TextField nimagen;
-    @FXML
-    private Button anterior;
-    @FXML
-    private Button siguiente;
     @FXML
     private Button ir;
 
@@ -99,7 +96,7 @@ public class imagenController {
 
     public void irobra(ActionEvent event) {
         int nobra = Integer.parseInt(nimagen.getText());
-        if (nobra < this.nobras) {
+        if (nobra < this.nobras && nobra > 0) {
             this.obraactual++;
             cambiarimagen(this.obraactual);
         }
@@ -124,7 +121,7 @@ public class imagenController {
                 Image image = new Image(inputStream);
                 this.imagen.setImage(image);
                 String descripcion = rs.getString("descripcion");
-                this.txtDescripcion.setText(descripcion);
+                txtDescripcion.setText(descripcion);
                 conexion.cerrarconexion(st);
             }
         } catch (SQLException e) {

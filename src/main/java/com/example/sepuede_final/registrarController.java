@@ -135,15 +135,15 @@ public class registrarController {
         Node source = (Node) event.getSource();
         Stage escena = (Stage) source.getScene().getWindow();
         escena.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("4general.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("imagen.fxml"));
         try {
             Parent root = fxmlLoader.load();
-            generalController controller = fxmlLoader.getController();
+            imagenController controller = fxmlLoader.getController();
             Scene scene = new Scene(root);
             Stage stage = new Stage();
             stage.setResizable(false);
             stage.sizeToScene();
-            stage.setTitle("Pagina2");
+            stage.setTitle("Vista de Imagenes");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {

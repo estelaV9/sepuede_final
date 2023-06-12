@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -11,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<fx:root prefHeight="337.0" prefWidth="628.0" type="AnchorPane" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sepuede_final.imagenController">
+<AnchorPane prefHeight="337.0" prefWidth="628.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sepuede_final.imagenController">
     <children>
         <ImageView fitHeight="355.0" fitWidth="628.0" layoutY="1.0" pickOnBounds="true" style="-fx-opacity: 0.6;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <image>
@@ -33,7 +32,6 @@
          </image>
       </ImageView>
         <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#AccionVolver" style="-fx-background-color: #564a4d;" text="Volver" textFill="WHITE" />
-        <ScrollBar layoutX="607.0" layoutY="8.0" orientation="VERTICAL" prefHeight="340.0" prefWidth="14.0" />
       <ImageView fitHeight="46.0" fitWidth="377.0" layoutX="132.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../imagen/7a32d8149f1fda42e9428b3e4ddc2248.png" />
@@ -49,4 +47,4 @@
       </Label>
       <Button fx:id="ir" layoutX="426.0" layoutY="305.0" mnemonicParsing="false" onAction="#irobra" text="IR" />
     </children>
-</fx:root>
+</AnchorPane>
