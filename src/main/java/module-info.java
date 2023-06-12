@@ -3,6 +3,8 @@ module com.example.sepuede_final {
     requires javafx.fxml;
 
     requires org.controlsfx.controls;
+    requires java.sql;
+    requires mysql.connector.java;
 
     opens com.example.sepuede_final to javafx.fxml;
     exports com.example.sepuede_final;

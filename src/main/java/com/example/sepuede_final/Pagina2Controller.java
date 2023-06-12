@@ -14,16 +14,66 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class Pagina2Controller {
     @FXML
-    private TextField txtContraseya;
+    private TextField txtUsuario;
 
     @FXML
-    private PasswordField txtUsuario;
+    private PasswordField txtContraseya;
 
     @FXML
     void AccionAcceder(ActionEvent event) {
+        if (txtUsuario.getText().equals("")) {
+            Alert errorlogin = new Alert(Alert.AlertType.WARNING);
+            errorlogin.setContentText("Los campos estan vacíos.");
+            errorlogin.showAndWait();
+        } else {
+            DBconexion conexion = new DBconexion();
+            Statement st = conexion.crearconexion(false);
+            String sql = "SELECT * FROM usuario";
+            ResultSet rs = conexion.ejecutarsentencia(sql, st);
+            boolean usuarioencontrado = false;
+            Alert econexionlogin = new Alert(Alert.AlertType.ERROR);
+            econexionlogin.setContentText("Conexión con la base de datos fallida.");
+            try {
+                String usuariologin = null;
+                int registrousuario = 0;
+                Alert errorlogin = new Alert(Alert.AlertType.WARNING);
+                while (rs.next() && !usuarioencontrado) {
+                    usuariologin = rs.getString("nombre_usuario");
+                    if (usuariologin.equals(txtUsuario.getText())) {
+                        usuarioencontrado = true;
+                        registrousuario = rs.getRow();
+                    }
+                }
+                if (!usuarioencontrado) {
+                    errorlogin.setContentText("El usuario no existe.");
+                    errorlogin.showAndWait();
+                } else {
+                    rs.absolute(registrousuario);
+                    if (rs.getString("contraseña").equals(txtContraseya.getText())) {
+                        String rol = rs.getString("rol");
+                        System.out.println(rol);
+                    } else {
+                        errorlogin.setContentText("La contraseña para " + usuariologin + " es incorrecta.");
+                        errorlogin.showAndWait();
+                    }
+                }
+            } catch (SQLException e) {
+                System.out.println("Error base de datos");
+                econexionlogin.showAndWait();
+                e.printStackTrace();
+            } catch (Exception e) {
+                econexionlogin.showAndWait();
+                e.printStackTrace();
+            }
+            conexion.cerrarconexion(st);
+        }
+
         if (txtUsuario.getText().equals("admin") && txtContraseya.getText().equals("admin")) {
             Node source = (Node) event.getSource();
             Stage escena = (Stage) source.getScene().getWindow();
@@ -42,11 +92,6 @@ public class Pagina2Controller {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-
-    }else {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setContentText("error las contraseña o el nombre es incorrecto");
-        alert.showAndWait();
     }
 
 }

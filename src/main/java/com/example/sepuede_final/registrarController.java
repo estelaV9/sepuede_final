@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
+import java.sql.*;
 
 public class registrarController {
     @FXML
@@ -87,9 +88,41 @@ public class registrarController {
     void AccionSign(ActionEvent event) {
         if(txtUusario.getText().equals("") || txtContrasenya.getText().equals("") || tipo_rol.getText().equals("")){
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("Los campos estan vacios");
+            alert.setContentText("Los campos están vacíos.");
             alert.showAndWait();
-        }else {
+        } else {
+            DBconexion conexion = new DBconexion();
+            Statement st = conexion.crearconexion(false);
+            String sql = "SELECT * FROM usuario";
+            ResultSet rs = conexion.ejecutarsentencia(sql, st);
+            Alert error = new Alert(Alert.AlertType.ERROR);
+            error.setContentText("No se ha podido registrar el usuario.");
+            Alert correcto = new Alert(Alert.AlertType.INFORMATION);
+            correcto.setContentText("El usuario se ha registrado correctamente");
+            try {
+                rs.moveToInsertRow();
+                rs.updateString(2, txtUusario.getText());
+                rs.updateString(3, txtContrasenya.getText());
+                String rol;
+                if (vendedor.isSelected()) {
+                    rol = "vendedor";
+                } else if (comprador.isSelected()) {
+                    rol = "comprador";
+                } else {
+                    rol = "usuario";
+                }
+                rs.updateString(4, rol);
+                rs.insertRow();
+                correcto.showAndWait();
+            } catch (SQLException e) {
+                System.out.println("Error base de datos");
+                error.showAndWait();
+                e.printStackTrace();
+            } catch (Exception e) {
+                error.showAndWait();
+                e.printStackTrace();
+            }
+            conexion.cerrarconexion(st);
 
             if (vendedor.isSelected()) {
                 Node source = (Node) event.getSource();
@@ -149,7 +182,8 @@ public class registrarController {
 
                 }
             }
-        }}
+        }
+    }
 
 
     @FXML
