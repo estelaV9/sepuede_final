@@ -18,7 +18,7 @@ public class registrarController {
     @FXML
     private RadioButton comprador;
     @FXML
-    private RadioButton usuarios;
+    private RadioButton usuario;
 
     @FXML
     private RadioButton vendedor;
@@ -26,18 +26,18 @@ public class registrarController {
     private Label tipo_rol;
 
     @FXML
-    private PasswordField txtContrasenya;
+    private PasswordField txtContrasenia;
     @FXML
-    private TextField txtUusario;
+    private TextField txtUsuario;
 
     @FXML
-    void AccionCancelar2(ActionEvent event) {
-        txtContrasenya.setText("");
-        txtUusario.setText("");
+    void cancelar () {
+        txtUsuario.setText("");
+        txtContrasenia.setText("");
     }
 
     @FXML
-    void AccionCerrar2 (ActionEvent event) {
+    void cerrar (ActionEvent event) {
 
         Node source = (Node) event.getSource();
         Stage escena = (Stage) source.getScene().getWindow();
@@ -64,14 +64,14 @@ public class registrarController {
 
 
     @FXML
-    void AccionLogin2(ActionEvent event) {
+    void iriniciarsesion(ActionEvent event) {
         Node source = (Node) event.getSource();
         Stage escena1 = (Stage) source.getScene().getWindow();
         escena1.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("3Pagina2.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("3login.fxml"));
         try {
             Parent root = fxmlLoader.load();
-            Pagina2Controller controller = fxmlLoader.getController();
+            loginController controller = fxmlLoader.getController();
             Scene scene = new Scene(root);
             Stage stage = new Stage();
             stage.setResizable(false);
@@ -85,8 +85,8 @@ public class registrarController {
     }
 
     @FXML
-    void AccionSign(ActionEvent event) {
-        if(txtUusario.getText().equals("") || txtContrasenya.getText().equals("") || tipo_rol.getText().equals("")){
+    void registrar(ActionEvent event) {
+        if(txtUsuario.getText().equals("") || txtContrasenia.getText().equals("") || tipo_rol.getText().equals("")){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText("Los campos están vacíos.");
             alert.showAndWait();
@@ -101,19 +101,22 @@ public class registrarController {
             correcto.setContentText("El usuario se ha registrado correctamente");
             try {
                 rs.moveToInsertRow();
-                rs.updateString(2, txtUusario.getText());
-                rs.updateString(3, txtContrasenya.getText());
-                String rol;
+                rs.updateString(2, txtUsuario.getText());
+                rs.updateString(3, txtContrasenia.getText());
+                String rol = "usuario";
                 if (vendedor.isSelected()) {
                     rol = "vendedor";
                 } else if (comprador.isSelected()) {
                     rol = "comprador";
-                } else {
+                } else if (usuario.isSelected()){
                     rol = "usuario";
                 }
                 rs.updateString(4, rol);
                 rs.insertRow();
                 correcto.showAndWait();
+                txtUsuario.setText("");
+                txtContrasenia.setText("");
+                usuario.setSelected(true);
             } catch (SQLException e) {
                 System.out.println("Error base de datos");
                 error.showAndWait();
@@ -123,71 +126,12 @@ public class registrarController {
                 e.printStackTrace();
             }
             conexion.cerrarconexion(st);
-
-            if (vendedor.isSelected()) {
-                Node source = (Node) event.getSource();
-                Stage escena = (Stage) source.getScene().getWindow();
-                escena.close();
-                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("6vistavendedor.fxml"));
-                try {
-                    Parent root = fxmlLoader.load();
-                    vendedorController controller = fxmlLoader.getController();
-                    Scene scene = new Scene(root);
-                    Stage stage = new Stage();
-                    stage.setResizable(false);
-                    stage.sizeToScene();
-                    stage.setTitle("Pantalla vendedor");
-                    stage.setScene(scene);
-                    stage.show();
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            } else {
-                if (comprador.isSelected()) {
-                    Node source = (Node) event.getSource();
-                    Stage escena = (Stage) source.getScene().getWindow();
-                    escena.close();
-                    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("5vistacomprador.fxml"));
-                    try {
-                        Parent root = fxmlLoader.load();
-                        compradorController controller = fxmlLoader.getController();
-                        Scene scene = new Scene(root);
-                        Stage stage = new Stage();
-                        stage.setResizable(false);
-                        stage.sizeToScene();
-                        stage.setTitle("Pantalla comprador");
-                        stage.setScene(scene);
-                        stage.show();
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
-                } else {
-                    Node source = (Node) event.getSource();
-                    Stage escena = (Stage) source.getScene().getWindow();
-                    escena.close();
-                    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("4general.fxml"));
-                    try {
-                        Parent root = fxmlLoader.load();
-                        generalController controller = fxmlLoader.getController();
-                        Scene scene = new Scene(root);
-                        Stage stage = new Stage();
-                        stage.setResizable(false);
-                        stage.sizeToScene();
-                        stage.setTitle("Pantalla general");
-                        stage.setScene(scene);
-                        stage.show();
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
-
-                }
-            }
         }
     }
 
 
     @FXML
-    void AccionSincuenta2(ActionEvent event) {
+    void accedersincuenta(ActionEvent event) {
         Node source = (Node) event.getSource();
         Stage escena = (Stage) source.getScene().getWindow();
         escena.close();
@@ -208,14 +152,14 @@ public class registrarController {
     }
 
     @FXML
-    void AccionVolver2(ActionEvent event) {
+    void volver(ActionEvent event) {
         Node source = (Node) event.getSource();
         Stage escena = (Stage) source.getScene().getWindow();
         escena.close();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("1open.fxml"));
         try {
             Parent root = fxmlLoader.load();
-            OpenController controller = fxmlLoader.getController();
+            openController controller = fxmlLoader.getController();
             Scene scene = new Scene(root);
             Stage stage = new Stage();
             stage.setResizable(false);
@@ -226,6 +170,10 @@ public class registrarController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void initialize() {
+        usuario.setSelected(true);
     }
 
 }

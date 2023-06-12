@@ -135,7 +135,7 @@ public class compradorController {
         Node source = (Node) event.getSource();
         Stage escena = (Stage) source.getScene().getWindow();
         escena.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("2registrar.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("2registro.fxml"));
         try {
             Parent root = fxmlLoader.load();
             registrarController controller = fxmlLoader.getController();

@@ -10,14 +10,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class OpenController {
+public class openController {
 
     @FXML
     void AccionEntrar(ActionEvent event) {
         Node source = (Node) event.getSource();
         Stage escena = (Stage) source.getScene().getWindow();
         escena.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("2registrar.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("2registro.fxml"));
         try {
             Parent root = fxmlLoader.load();
             registrarController controller = fxmlLoader.getController();

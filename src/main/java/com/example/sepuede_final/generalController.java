@@ -1,6 +1,8 @@
 package com.example.sepuede_final;
 
 import javafx.animation.PauseTransition;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,15 +10,26 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.sql.Blob;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class generalController {
 
     @FXML
     private Button img1;
+    @FXML
+    private ListView<ImageView> imagenes;
 
     @FXML
     void AccionCerrar(ActionEvent event) {
@@ -132,10 +145,10 @@ public class generalController {
         Node source = (Node) event.getSource();
         Stage escena = (Stage) source.getScene().getWindow();
         escena.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("3Pagina2.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("3login.fxml"));
         try {
             Parent root = fxmlLoader.load();
-            Pagina2Controller controller = fxmlLoader.getController();
+            loginController controller = fxmlLoader.getController();
             Scene scene = new Scene(root);
             Stage stage = new Stage();
             stage.setResizable(false);
@@ -146,5 +159,32 @@ public class generalController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void initialize() {
+        DBconexion conexion = new DBconexion();
+        Statement st = conexion.crearconexion(false);
+        String sql = "SELECT * FROM imagenes";
+        ObservableList<ImageView> listaimagenes = FXCollections.observableArrayList();
+        try {
+            ResultSet rs = conexion.ejecutarsentencia(sql, st);
+            while(rs.next()) {
+                Blob url = rs.getBlob("url");
+                // Leer los bytes del Blob
+                byte[] bytes = url.getBytes(1, (int) url.length());
+                // Crear un objeto Image desde los bytes
+                InputStream inputStream = new ByteArrayInputStream(bytes);
+                Image image = new Image(inputStream);
+                // Mostrar la imagen en un ImageView
+                ImageView imagen = new ImageView(image);
+                listaimagenes.add(imagen);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error base de datos");
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        this.imagenes.setItems(listaimagenes);
     }
 }

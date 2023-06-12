@@ -152,10 +152,10 @@ public class general2Controller {
         Node source = (Node) event.getSource();
         Stage escena = (Stage) source.getScene().getWindow();
         escena.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("3Pagina2.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("3login.fxml"));
         try {
             Parent root = fxmlLoader.load();
-            Pagina2Controller controller = fxmlLoader.getController();
+            loginController controller = fxmlLoader.getController();
             Scene scene = new Scene(root);
             Stage stage = new Stage();
             stage.setResizable(false);
