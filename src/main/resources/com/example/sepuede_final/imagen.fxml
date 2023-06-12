@@ -37,14 +37,20 @@
             <Image url="@../../../imagen/7a32d8149f1fda42e9428b3e4ddc2248.png" />
          </image>
       </ImageView>
-      <Button fx:id="anterior" layoutX="156.0" layoutY="305.0" mnemonicParsing="false" onAction="#anterior" text="Anterior" />
-      <Button fx:id="siguiente" layoutX="259.0" layoutY="304.0" mnemonicParsing="false" onAction="#siguiente" text="Siguiente" />
-      <TextField fx:id="nimagen" layoutX="466.0" layoutY="305.0" prefHeight="25.0" prefWidth="43.0" />
-      <Label fx:id="totalImagenes" layoutX="519.0" layoutY="300.0" text="/ ">
+      <Button fx:id="anterior" layoutX="307.0" layoutY="306.0" mnemonicParsing="false" onAction="#anterior" text="Anterior" />
+      <Button fx:id="siguiente" defaultButton="true" layoutX="386.0" layoutY="306.0" mnemonicParsing="false" onAction="#siguiente" text="Siguiente" />
+      <TextField fx:id="nimagen" layoutX="509.0" layoutY="296.0" prefHeight="25.0" prefWidth="43.0">
          <font>
-            <Font size="22.0" />
+            <Font size="20.0" />
+         </font></TextField>
+      <Label fx:id="totalImagenes" layoutX="568.0" layoutY="303.0" text="/ ">
+         <font>
+            <Font size="20.0" />
          </font>
       </Label>
-      <Button fx:id="ir" layoutX="426.0" layoutY="305.0" mnemonicParsing="false" onAction="#irobra" text="IR" />
+      <Button fx:id="ir" layoutX="472.0" layoutY="304.0" mnemonicParsing="false" onAction="#irobra" text="IR" />
+      <Button fx:id="publicar" layoutX="35.0" layoutY="306.0" mnemonicParsing="false" onAction="#publicar" text="Publicar" textFill="#e80000" />
+      <Button fx:id="comprar" layoutX="110.0" layoutY="306.0" mnemonicParsing="false" onAction="#comprar" text="Comprar" textFill="#ff0707" />
+      <Button fx:id="administrar" layoutX="188.0" layoutY="306.0" mnemonicParsing="false" onAction="#administrar" text="Administrar" textFill="#fc0d0d" />
     </children>
 </AnchorPane>

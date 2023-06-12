@@ -21,6 +21,9 @@ import javafx.util.Callback;
 import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 
 public class publicarController {
@@ -112,10 +115,25 @@ public class publicarController {
             alert.setContentText("Los campos estan vacios");
             alert.showAndWait();
 
-        }else {
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setContentText("¡La publicación se ha ejecutado correctamente!");
-            alert.showAndWait();
+        } else {
+            DBconexion conexion = new DBconexion();
+            Statement st = conexion.crearconexion(false);
+            String sql = "SELECT * FROM imagenes";
+            try {
+                ResultSet rs = conexion.ejecutarsentencia(sql, st);
+                rs.moveToInsertRow();
+                rs.updateString("descripcion", descripcion.getText());
+                rs.insertRow();
+                conexion.cerrarconexion(st);
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setContentText("¡La publicación se ha ejecutado correctamente!");
+                alert.showAndWait();
+            } catch (SQLException e) {
+                System.out.println("Error base de datos");
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -124,15 +142,16 @@ public class publicarController {
         Node source = (Node) event.getSource();
         Stage escena = (Stage) source.getScene().getWindow();
         escena.close();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("6vistavendedor.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("imagen.fxml"));
         try {
             Parent root = fxmlLoader.load();
-            vendedorController controller = fxmlLoader.getController();
+            imagenController controller = fxmlLoader.getController();
+            controller.setRoluser("vendedor");
             Scene scene = new Scene(root);
             Stage stage = new Stage();
             stage.setResizable(false);
             stage.sizeToScene();
-            stage.setTitle("Vista vendedor");
+            stage.setTitle("Ver obras");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {

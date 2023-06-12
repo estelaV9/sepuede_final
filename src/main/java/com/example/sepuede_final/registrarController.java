@@ -139,6 +139,7 @@ public class registrarController {
         try {
             Parent root = fxmlLoader.load();
             imagenController controller = fxmlLoader.getController();
+            controller.setRoluser("usuario");
             Scene scene = new Scene(root);
             Stage stage = new Stage();
             stage.setResizable(false);

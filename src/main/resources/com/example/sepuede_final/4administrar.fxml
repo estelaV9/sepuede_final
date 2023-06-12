@@ -7,7 +7,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="345.0" prefWidth="532.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sepuede_final.administrarController">
+<AnchorPane prefHeight="345.0" prefWidth="532.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sepuede_final.administrarController">
     <children>
         <ImageView fitHeight="356.0" fitWidth="600.0" pickOnBounds="true" style="-fx-opacity: 0.6;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <image>
@@ -21,11 +21,15 @@
                 <Image url="@../../../imagen/7a32d8149f1fda42e9428b3e4ddc2248.png" />
             </image>
         </ImageView>
-      <TreeTableView layoutX="186.0" layoutY="81.0" prefHeight="222.0" prefWidth="278.0">
+      <TreeTableView fx:id="usuarios" layoutX="95.0" layoutY="68.0" prefHeight="270.0" prefWidth="451.0">
         <columns>
-          <TreeTableColumn prefWidth="75.0" text="C1" />
-          <TreeTableColumn prefWidth="75.0" text="C2" />
+          <TreeTableColumn fx:id="id" prefWidth="43.0" text="id" />
+          <TreeTableColumn fx:id="nombre" prefWidth="115.0" text="nombre" />
+            <TreeTableColumn fx:id="contraseña" prefWidth="117.0" text="contraseña" />
+            <TreeTableColumn fx:id="rol" prefWidth="67.0" text="rol" />
+            <TreeTableColumn fx:id="fecha_registro" prefWidth="108.0" text="fecha_registro" />
         </columns>
       </TreeTableView>
+        <Button layoutX="16.0" layoutY="307.0" onAction="#eliminarUsuario" text="Eliminar" />
     </children>
 </AnchorPane>

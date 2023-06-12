@@ -50,24 +50,24 @@ public class formulariocController {
 
     @FXML
     void AccionVolver(ActionEvent event) {
-            Node source = (Node) event.getSource();
-            Stage escena = (Stage) source.getScene().getWindow();
-            escena.close();
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("5vistacomprador.fxml"));
-            try {
-                Parent root = fxmlLoader.load();
-                compradorController controller = fxmlLoader.getController();
-                Scene scene = new Scene(root);
-                Stage stage = new Stage();
-                stage.setResizable(false);
-                stage.sizeToScene();
-                stage.setTitle("Vista comprador");
-                stage.setScene(scene);
-                stage.show();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-
+        Node source = (Node) event.getSource();
+        Stage escena = (Stage) source.getScene().getWindow();
+        escena.close();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("imagen.fxml"));
+        try {
+            Parent root = fxmlLoader.load();
+            imagenController controller = fxmlLoader.getController();
+            controller.setRoluser("comprador");
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setResizable(false);
+            stage.sizeToScene();
+            stage.setTitle("Ver obras");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

@@ -57,78 +57,25 @@ public class loginController {
                     rs.absolute(registrousuario);
                     if (rs.getString("contraseña").equals(txtContraseniaLogin.getText())) {
                         String rol = rs.getString("rol");
-                        if (rol.equals("comprador")) {
-                            Node source = (Node) event.getSource();
-                            Stage escena = (Stage) source.getScene().getWindow();
-                            escena.close();
-                            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("5vistacomprador.fxml"));
-                            try {
-                                Parent root = fxmlLoader.load();
-                                compradorController controller = fxmlLoader.getController();
-                                Scene scene = new Scene(root);
-                                Stage stage = new Stage();
-                                stage.setResizable(false);
-                                stage.sizeToScene();
-                                stage.setTitle("Pantalla comprador");
-                                stage.setScene(scene);
-                                stage.show();
-                            } catch (IOException e) {
-                                throw new RuntimeException(e);
-                            }
-                        } else if (rol.equals("vendedor")) {
-                            Node source = (Node) event.getSource();
-                            Stage escena = (Stage) source.getScene().getWindow();
-                            escena.close();
-                            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("6vistavendedor.fxml"));
-                            try {
-                                Parent root = fxmlLoader.load();
-                                vendedorController controller = fxmlLoader.getController();
-                                Scene scene = new Scene(root);
-                                Stage stage = new Stage();
-                                stage.setResizable(false);
-                                stage.sizeToScene();
-                                stage.setTitle("Pantalla vendedor");
-                                stage.setScene(scene);
-                                stage.show();
-                            } catch (IOException e) {
-                                throw new RuntimeException(e);
-                            }
-                        } else if (rol.equals("admin")) {
-                            Node source = (Node) event.getSource();
-                            Stage escena = (Stage) source.getScene().getWindow();
-                            escena.close();
-                            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("4.1adminsitrador.fxml"));
-                            try {
-                                Parent root = fxmlLoader.load();
-                                general2Controller controller = fxmlLoader.getController();
-                                Scene scene = new Scene(root);
-                                Stage stage = new Stage();
-                                stage.setResizable(false);
-                                stage.sizeToScene();
-                                stage.setTitle("Pantalla Administrador");
-                                stage.setScene(scene);
-                                stage.show();
-                            } catch (IOException e) {
-                                throw new RuntimeException(e);
-                            }
-                        } else if (rol.equals("usuario")) {
-                            Node source = (Node) event.getSource();
-                            Stage escena = (Stage) source.getScene().getWindow();
-                            escena.close();
-                            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("4general.fxml"));
-                            try {
-                                Parent root = fxmlLoader.load();
-                                generalController controller = fxmlLoader.getController();
-                                Scene scene = new Scene(root);
-                                Stage stage = new Stage();
-                                stage.setResizable(false);
-                                stage.sizeToScene();
-                                stage.setTitle("Pantalla general");
-                                stage.setScene(scene);
-                                stage.show();
-                            } catch (IOException e) {
-                                throw new RuntimeException(e);
-                            }
+                        Node source = (Node) event.getSource();
+                        Stage escena = (Stage) source.getScene().getWindow();
+                        escena.close();
+                        System.out.println(rol);
+                        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("imagen.fxml"));
+                        try {
+                            Parent root = fxmlLoader.load();
+                            imagenController controller = fxmlLoader.getController();
+                            controller.setRoluser(rol);
+                            System.out.println(rol + " 2");
+                            Scene scene = new Scene(root);
+                            Stage stage = new Stage();
+                            stage.setResizable(false);
+                            stage.sizeToScene();
+                            stage.setTitle("Ver obras");
+                            stage.setScene(scene);
+                            stage.show();
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
                         }
                     } else {
                         errorlogin.setContentText("La contraseña para " + usuariologin + " es incorrecta.");
@@ -157,6 +104,8 @@ public class loginController {
         try {
             Parent root = fxmlLoader.load();
             imagenController controller = fxmlLoader.getController();
+            controller.setRoluser("usuario");
+            System.out.println(controller.getRoluser());
             Scene scene = new Scene(root);
             Stage stage = new Stage();
             stage.setResizable(false);
