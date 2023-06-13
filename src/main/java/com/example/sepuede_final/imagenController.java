@@ -41,7 +41,7 @@ public class imagenController {
 
     private int obraactual;
     private int nobras;
-    private String roluser;
+    public String roluser;
 
     @FXML
     void AccionVolver(ActionEvent event) {
@@ -65,8 +65,26 @@ public class imagenController {
     }
 
     public void initialize() {
-        System.out.println(this.roluser);
-
+        if (this.roluser == null) {
+            this.comprar.setDisable(false);
+            this.publicar.setDisable(false);
+            this.administrar.setDisable(false);
+        } else {
+            if (this.roluser.equals("usuario")) {
+                this.comprar.setDisable(true);
+                this.publicar.setDisable(true);
+                this.administrar.setDisable(true);
+            }
+            if (this.roluser.equals("comprador")) {
+                this.comprar.setDisable(false);
+            }
+            if (this.roluser.equals("vendedor")) {
+                this.publicar.setDisable(false);
+            }
+            if (this.roluser.equals("admin")) {
+                this.administrar.setDisable(false);
+            }
+        }
         cambiarimagen(1);
         DBconexion conexion = new DBconexion();
         Statement st = conexion.crearconexion(false);
